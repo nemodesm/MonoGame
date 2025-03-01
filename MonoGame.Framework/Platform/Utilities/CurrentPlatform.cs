@@ -7,7 +7,7 @@ using System;
 
 namespace MonoGame.Framework.Utilities
 {
-    internal enum OS
+    public enum OS
     {
         Windows,
         Linux,
@@ -15,7 +15,7 @@ namespace MonoGame.Framework.Utilities
         Unknown
     }
 
-    internal static class CurrentPlatform
+    public static class CurrentPlatform
     {
         private static bool _init = false;
         private static OS _os;
@@ -45,7 +45,7 @@ namespace MonoGame.Framework.Utilities
                     _os = OS.MacOSX;
 
                     var buf = IntPtr.Zero;
-                    
+
                     try
                     {
                         buf = Marshal.AllocHGlobal(8192);
