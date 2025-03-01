@@ -126,6 +126,17 @@ namespace Microsoft.Xna.Framework
         }
 
         /// <summary>
+        /// Multiplies the components of two points by each other.
+        /// </summary>
+        /// <param name="value1">Source <see cref="Point"/> on the left of the mul sign.</param>
+        /// <param name="value2">Source <see cref="Point"/> on the right of the mul sign.</param>
+        /// <returns>Result of the multiplication.</returns>
+        public static Point operator *(Point value1, int factor)
+        {
+            return new Point(value1.X * factor, value1.Y * factor);
+        }
+
+        /// <summary>
         /// Divides the components of a <see cref="Point"/> by the components of another <see cref="Point"/>.
         /// </summary>
         /// <param name="source">Source <see cref="Point"/> on the left of the div sign.</param>
@@ -134,6 +145,17 @@ namespace Microsoft.Xna.Framework
         public static Point operator /(Point source, Point divisor)
         {
             return new Point(source.X / divisor.X, source.Y / divisor.Y);
+        }
+
+        /// <summary>
+        /// Multiplies the components of two points by each other.
+        /// </summary>
+        /// <param name="value1">Source <see cref="Point"/> on the left of the mul sign.</param>
+        /// <param name="value2">Source <see cref="Point"/> on the right of the mul sign.</param>
+        /// <returns>Result of the multiplication.</returns>
+        public static Point operator /(Point value1, int factor)
+        {
+            return new Point(value1.X / factor, value1.Y / factor);
         }
 
         /// <summary>
@@ -152,11 +174,13 @@ namespace Microsoft.Xna.Framework
         /// </summary>
         /// <param name="a"><see cref="Point"/> instance on the left of the not equal sign.</param>
         /// <param name="b"><see cref="Point"/> instance on the right of the not equal sign.</param>
-        /// <returns><c>true</c> if the instances are not equal; <c>false</c> otherwise.</returns>	
+        /// <returns><c>true</c> if the instances are not equal; <c>false</c> otherwise.</returns>
         public static bool operator !=(Point a, Point b)
         {
             return !a.Equals(b);
         }
+
+        public static explicit operator Point(Vector2 vector) => new Point((int)vector.X, (int)vector.Y);
 
         #endregion
 
