@@ -852,6 +852,15 @@ namespace Microsoft.Xna.Framework
         }
 
         /// <summary>
+        /// Turns this <see cref="Vector2"/> to a unit vector with the same direction.
+        /// </summary>
+        public Vector2 Normalized()
+        {
+            float val = 1.0f / MathF.Sqrt((X * X) + (Y * Y));
+            return new Vector2(X, Y) * val;
+        }
+
+        /// <summary>
         /// Creates a new <see cref="Vector2"/> that contains a normalized values from another vector.
         /// </summary>
         /// <param name="value">Source <see cref="Vector2"/>.</param>

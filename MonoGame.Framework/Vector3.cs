@@ -858,6 +858,16 @@ namespace Microsoft.Xna.Framework
         }
 
         /// <summary>
+        /// Turns this <see cref="Vector3"/> to a unit vector with the same direction.
+        /// </summary>
+        public Vector3 Normalized()
+        {
+            float factor = MathF.Sqrt((X * X) + (Y * Y) + (Z * Z));
+            factor = 1f / factor;
+            return new Vector3(X * factor, Y * factor, Z * factor);
+        }
+
+        /// <summary>
         /// Creates a new <see cref="Vector3"/> that contains a normalized values from another vector.
         /// </summary>
         /// <param name="value">Source <see cref="Vector3"/>.</param>
