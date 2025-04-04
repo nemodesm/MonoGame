@@ -132,6 +132,14 @@ namespace Microsoft.Xna.Framework
         }
 
         /// <summary>
+        /// Converts a <see cref="Vector2"/> to a <see cref="System.Numerics.Vector2"/>.
+        /// </summary>
+        public static implicit operator System.Numerics.Vector2(Vector2 value)
+        {
+            return new System.Numerics.Vector2(value.X, value.Y);
+        }
+
+        /// <summary>
         /// Converts a <see cref="Vector3"/> to a <see cref="Vector2"/>.
         /// </summary>
         /// <param name="value">The converted value.</param>
