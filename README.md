@@ -19,6 +19,10 @@
 [License](#license)
 </div>
 
+## Warning:
+
+This is a fork from the main repository intended for use in Nemodesm's projects. Changes are primarily converting various fields to public and adding conversions between types.
+
 ## Overview
 **MonoGame** is a simple and powerful .NET framework for creating games for desktop PCs, video game consoles, and mobile devices using the C# programming language. It has been successfully used to create games such as [Streets of Rage 4](https://store.steampowered.com/app/985890/Streets_of_Rage_4/), [Carrion](https://store.steampowered.com/app/953490/CARRION/), [Celeste](https://store.steampowered.com/app/504230/Celeste/), [Stardew Valley](https://store.steampowered.com/app/413150/Stardew_Valley/), and [many others](https://monogame.net/showcase/). 
 
