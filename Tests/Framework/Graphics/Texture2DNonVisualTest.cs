@@ -14,6 +14,7 @@ namespace MonoGame.Tests.Graphics
 {
     [TestFixture]
     [NonParallelizable]
+    [RunOnUI]
     internal class Texture2DNonVisualTest : GraphicsDeviceTestFixtureBase
     {
         Texture2D _texture;
@@ -54,8 +55,6 @@ namespace MonoGame.Tests.Graphics
 #if XNA
         [TestCase("Assets/Textures/LogoOnly_64px.bmp")]
 #endif
-        // not supported
-        [TestCase("Assets/Textures/LogoOnly_64px.tif")]
         [TestCase("Assets/Textures/LogoOnly_64px.dds")]
         [TestCase("Assets/Textures/SampleCube64DXT1Mips.dds")]
         [RunOnUI]
