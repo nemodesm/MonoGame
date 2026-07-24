@@ -1283,6 +1283,24 @@ namespace Microsoft.Xna.Framework
         }
 
         /// <summary>
+        /// Converts a <see cref="Vector2"/> to a <see cref="Vector4"/>.
+        /// </summary>
+        /// <param name="value">The converted value.</param>
+        public static implicit operator Vector4(Vector2 value)
+        {
+            return new Vector4(value.X, value.Y, 0, 0);
+        }
+
+        /// <summary>
+        /// Converts a <see cref="Vector3"/> to a <see cref="Vector4"/>.
+        /// </summary>
+        /// <param name="value">The converted value.</param>
+        public static implicit operator Vector4(Vector3 value)
+        {
+            return new Vector4(value.X, value.Y, value.Z, 0);
+        }
+
+        /// <summary>
         /// Inverts values in the specified <see cref="Vector4"/>.
         /// </summary>
         /// <param name="value">Source <see cref="Vector4"/> on the right of the sub sign.</param>
@@ -1311,7 +1329,7 @@ namespace Microsoft.Xna.Framework
         /// </summary>
         /// <param name="value1"><see cref="Vector4"/> instance on the left of the not equal sign.</param>
         /// <param name="value2"><see cref="Vector4"/> instance on the right of the not equal sign.</param>
-        /// <returns><c>true</c> if the instances are not equal; <c>false</c> otherwise.</returns>	
+        /// <returns><c>true</c> if the instances are not equal; <c>false</c> otherwise.</returns>
         public static bool operator !=(Vector4 value1, Vector4 value2)
         {
             return !(value1 == value2);

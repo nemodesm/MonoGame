@@ -4,6 +4,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
@@ -87,8 +88,8 @@ namespace Microsoft.Xna.Framework
             get
             {
                 return string.Concat(
-                    this.X.ToString(), "  ",
-                    this.Y.ToString()
+                    this.X.ToString(CultureInfo.InvariantCulture), "  ",
+                    this.Y.ToString(CultureInfo.InvariantCulture)
                 );
             }
         }
@@ -148,6 +149,19 @@ namespace Microsoft.Xna.Framework
             return new Vector2(value.X, value.Y);
         }
 
+        /// <summary>
+        /// Converts a <see cref="Vector4"/> to a <see cref="Vector2"/>.
+        /// </summary>
+        /// <param name="value">The converted value.</param>
+        public static explicit operator Vector2(Vector4 value)
+        {
+            return new Vector2(value.X, value.Y);
+        }
+
+        /// <summary>
+        /// Converts a <see cref="Point"/> to a <see cref="Vector2"/>.
+        /// </summary>
+        /// <param name="point">The converted value.</param>
         public static implicit operator Vector2(Point point) => new Vector2(point.X, point.Y);
 
         /// <summary>

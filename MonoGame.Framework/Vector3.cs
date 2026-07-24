@@ -1376,6 +1376,15 @@ namespace Microsoft.Xna.Framework
         }
 
         /// <summary>
+        /// Converts a <see cref="Vector4"/> to a <see cref="Vector3"/>.
+        /// </summary>
+        /// <param name="value">The converted value.</param>
+        public static explicit operator Vector3(Vector4 value)
+        {
+            return new Vector3(value.X, value.Y, value.Z);
+        }
+
+        /// <summary>
         /// Compares whether two <see cref="Vector3"/> instances are equal.
         /// </summary>
         /// <param name="value1"><see cref="Vector3"/> instance on the left of the equal sign.</param>
