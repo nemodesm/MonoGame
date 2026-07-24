@@ -299,6 +299,38 @@ namespace Microsoft.Xna.Framework.Graphics
         /// </remarks>
         public static readonly BlendState Additive;
 
+
+        /// <summary>
+        /// A built-in state object with settings for additive blend that is
+        /// adding the destination data to the source data without using alpha.
+        /// </summary>
+        /// <remarks>
+        /// This built-in state object has the following settings:
+        /// <list type="table">
+        ///     <listheader>
+        ///         <term>Property</term>
+        ///         <description>Value</description>
+        ///     </listheader>
+        ///     <item>
+        ///         <term>ColorSourceBlend</term>
+        ///         <description><see cref="Blend.SourceAlpha"/></description>
+        ///     </item>
+        ///     <item>
+        ///         <term>AlphaSourceBlend</term>
+        ///         <description><see cref="Blend.SourceAlpha"/></description>
+        ///     </item>
+        ///     <item>
+        ///         <term>ColorDestinationBlend</term>
+        ///         <description><see cref="Blend.One"/></description>
+        ///     </item>
+        ///     <item>
+        ///         <term>AlphaDestinationBlend</term>
+        ///         <description><see cref="Blend.One"/></description>
+        ///     </item>
+        /// </list>
+        /// </remarks>
+        public static readonly BlendState Subtractive;
+
         /// <summary>
         /// A built-in state object with settings for alpha blend that is
         /// blending the source and destination data using alpha.
@@ -439,6 +471,17 @@ namespace Microsoft.Xna.Framework.Graphics
         static BlendState()
         {
             Additive = new BlendState("BlendState.Additive", Blend.SourceAlpha, Blend.One);
+            Subtractive = new BlendState
+            {
+                ColorSourceBlend = Blend.One,
+                AlphaSourceBlend = Blend.One,
+
+                ColorDestinationBlend = Blend.One,
+                AlphaDestinationBlend = Blend.One,
+
+                ColorBlendFunction = BlendFunction.ReverseSubtract,
+                AlphaBlendFunction = BlendFunction.ReverseSubtract
+            };
             AlphaBlend = new BlendState("BlendState.AlphaBlend", Blend.One, Blend.InverseSourceAlpha);
             NonPremultiplied = new BlendState("BlendState.NonPremultiplied", Blend.SourceAlpha, Blend.InverseSourceAlpha);
             Opaque = new BlendState("BlendState.Opaque", Blend.One, Blend.Zero);
