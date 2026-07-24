@@ -216,7 +216,7 @@ namespace Microsoft.Xna.Framework
             {
                 var hash = 17;
                 hash = hash * 23 + X.GetHashCode();
-                hash = hash * 23 + Y.GetHashCode();
+                hash = hash * 47 + Y.GetHashCode();
                 return hash;
             }
 
