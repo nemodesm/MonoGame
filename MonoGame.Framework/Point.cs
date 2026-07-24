@@ -129,7 +129,7 @@ namespace Microsoft.Xna.Framework
         /// Multiplies the components of two points by each other.
         /// </summary>
         /// <param name="value1">Source <see cref="Point"/> on the left of the mul sign.</param>
-        /// <param name="value2">Source <see cref="Point"/> on the right of the mul sign.</param>
+        /// <param name="factor">Source <see cref="int"/> on the right of the mul sign.</param>
         /// <returns>Result of the multiplication.</returns>
         public static Point operator *(Point value1, int factor)
         {
@@ -151,7 +151,7 @@ namespace Microsoft.Xna.Framework
         /// Multiplies the components of two points by each other.
         /// </summary>
         /// <param name="value1">Source <see cref="Point"/> on the left of the mul sign.</param>
-        /// <param name="value2">Source <see cref="Point"/> on the right of the mul sign.</param>
+        /// <param name="factor">Source <see cref="Point"/> on the right of the mul sign.</param>
         /// <returns>Result of the multiplication.</returns>
         public static Point operator /(Point value1, int factor)
         {
