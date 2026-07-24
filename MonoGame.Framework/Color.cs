@@ -413,7 +413,7 @@ namespace Microsoft.Xna.Framework
         /// </summary>
         /// <param name="a"><see cref="Color"/> instance on the left of the not equal sign.</param>
         /// <param name="b"><see cref="Color"/> instance on the right of the not equal sign.</param>
-        /// <returns><c>true</c> if the instances are not equal; <c>false</c> otherwise.</returns>	
+        /// <returns><c>true</c> if the instances are not equal; <c>false</c> otherwise.</returns>
         public static bool operator !=(Color a, Color b)
         {
             return (a._packedValue != b._packedValue);
@@ -1808,6 +1808,34 @@ namespace Microsoft.Xna.Framework
                 (color1.A * color2.A) / 255
             );
         }
+
+        /// <summary>
+        /// Adds two colors compenent-wise.
+        /// </summary>
+        /// <param name="color1">The first color to be added.</param>
+        /// <param name="color2">The second color to be added.</param>
+        /// <returns>The new color value created as a result of the addition.</returns>
+        public static Color operator +(Color color1, Color color2) =>
+            new(
+                color1.R + color2.R,
+                color1.G + color2.G,
+                color1.B + color2.B,
+                (color1.A + color2.A) / 2
+            );
+
+        /// <summary>
+        /// Subtracts two colors compenent-wise.
+        /// </summary>
+        /// <param name="color1">The color to be subtracted from.</param>
+        /// <param name="color2">The color to subtract.</param>
+        /// <returns>The new color value created as a result of the subtraction.</returns>
+        public static Color operator -(Color color1, Color color2) =>
+            new(
+                (color1.R - color2.R),
+                (color1.G - color2.G),
+                (color1.B - color2.B),
+                (color1.A + color2.A) / 2
+            );
 
         /// <summary>
         /// Gets a <see cref="Vector3"/> representation for this object.
